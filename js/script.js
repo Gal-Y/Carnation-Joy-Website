@@ -28,3 +28,26 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentSlide);
     console.log('Initial slide shown'); // Debugging line
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    let testimonials = document.querySelectorAll('.testimonial-card');
+    let currentIndex = 0;
+
+    function showNextTestimonial() {
+        testimonials.forEach((testimonial, index) => {
+            testimonial.classList.remove('active');
+            testimonial.style.opacity = 0;
+            if (index === currentIndex) {
+                testimonial.classList.add('active');
+                testimonial.style.opacity = 1;
+            }
+        });
+
+        currentIndex = (currentIndex + 1) % testimonials.length;
+    }
+
+    showNextTestimonial();
+    setInterval(showNextTestimonial, 5000); // Change testimonial every 5 seconds
+});
+
+
