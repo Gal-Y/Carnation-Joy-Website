@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    font-size: 1.1rem; /* Increased font size for better visibility */
+    font-size: 1.0rem; /* Increased font size for better visibility */
     font-weight: bold; /* Increased font weight for better visibility */
 }
 
