@@ -264,7 +264,7 @@ nav ul li a:hover, nav ul li .active {
 
 /* Services Section */
 #services {
-    background-color: #09a9f3; /* Change this to the desired blue */
+    background-color: #feffff; /* Change this to the desired blue */
     color: #ffffff; /* Ensure the text is readable */
     padding: 60px 20px;
     text-align: center;
@@ -399,26 +399,6 @@ nav ul li a:hover, nav ul li .active {
     }
 }
 
-/* Positioning the Wave Container */
-.wave-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: scaleY(-1); /* Flips the wave horizontally */
-    z-index: 1; /* Adjust z-index to ensure it sits above the background */
-}
-
-.wave-container svg {
-    display: block;
-    width: 100%;
-    height: 100px;
-}
-
-.wave-container path {
-    fill: #f8f9fa; /* Match the color of the services section */
-}
-
 /* Testimonial Section */
 .testimonial-section {
     position: relative;
@@ -486,16 +466,14 @@ nav ul li a:hover, nav ul li .active {
 /* Testimonial Text */
 #testimonials h2 {
     font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 40px;
+    font-style: italic;
+    color: #fcfbfb;
+    margin-bottom: -5px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    background: linear-gradient(45deg, 
-        rgba(255, 153, 153, 0.8), 
-        rgba(255, 204, 153, 0.8), 
-        rgba(255, 178, 102, 0.8), 
-        rgba(88, 149, 241, 0.8));
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-size: 400% 400%;
     padding: 10px 20px;
     border-radius: 10px;
