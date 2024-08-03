@@ -29,23 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Initial slide shown'); // Debugging line
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    let testimonials = document.querySelectorAll('.testimonial-card');
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonials = document.querySelectorAll('.testimonial-container');
     let currentIndex = 0;
 
     function showNextTestimonial() {
-        testimonials.forEach((testimonial, index) => {
-            testimonial.classList.remove('active');
-            testimonial.style.opacity = 0;
-            if (index === currentIndex) {
-                testimonial.classList.add('active');
-                testimonial.style.opacity = 1;
-            }
-        });
-
+        testimonials[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % testimonials.length;
+        testimonials[currentIndex].classList.add('active');
     }
 
-    showNextTestimonial();
-    setInterval(showNextTestimonial, 5000); // Change testimonial every 5 seconds
+    setInterval(showNextTestimonial, 10000); // Rotate every 10 seconds
 });
