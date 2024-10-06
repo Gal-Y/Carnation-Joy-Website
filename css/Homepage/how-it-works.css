@@ -7,9 +7,11 @@
 
 #how-it-works h2 {
     font-size: 2.5rem;
-    color: #333;
+    margin-left: 100px;
+    color: #d6336c;
     margin-bottom: 40px;
     animation: fadeIn 1s ease-in-out;
+    text-align: left;
 }
 
 .steps-container {
