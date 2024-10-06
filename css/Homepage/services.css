@@ -1,0 +1,121 @@
+/* Services Section */
+#services {
+    max-width: 1700px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Change this to the desired blue */
+    color: #ffffff; /* Ensure the text is readable */
+    padding: 60px 20px;
+    text-align: left;
+    position: relative;
+}
+
+#services h2 {
+    font-size: 2.0rem;
+    margin-bottom: 50px;
+    color: #616060;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+    z-index: 2;
+}
+
+.service-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    animation: bounceIn 1s ease;
+}
+
+.service-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #333;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+.service-item p {
+    font-size: 1rem;
+    color: #666;
+    animation: fadeInUp 1.4s ease-in-out;
+}
+
+/* Hover effect for Service Items */
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%; /* Ensures each slide takes up the entire width of the container */
+    box-sizing: border-box; /* Includes padding in the total width calculation */
+    justify-content: space-between;
+}
+
+.service-item {
+    flex: 0 0 23%; /* Change this to '0 0 25%' or wider to give more space */
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .service-item {
+        flex: 0 0 48%;
+        margin-bottom: 20px;
+    }
+    
+    .carousel-slide {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        flex: 0 0 100%;
+    }
+}

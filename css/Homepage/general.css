@@ -1,0 +1,15 @@
+/* ================================================
+   Project: Carnation Joy Website
+   Author: [Galen Yuan]
+   Date: [06/06/2024]
+   File: general.css
+   Description: General styles and resets for base styling.
+   ================================================= */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Ensure background color is white */
+}
