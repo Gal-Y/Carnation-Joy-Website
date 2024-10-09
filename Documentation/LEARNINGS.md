@@ -15,6 +15,8 @@ This document summarizes the lessons and knowledge gained during the development
 
 - Setting up a project directory structure effectively helps keep files organized and manageable.
 - Using a local server (`python -m http.server`, or VS Code's Live Server) is essential for proper testing, especially for components like footers loaded via JavaScript.
+- Learned to use live server extension for components that are hidden on default browswer, allowing tracking of workflow locally.
+  - THIS WAS SO HELPFUL EVEN FOR TRACKING NORMAL WORK I DONT NEED TO REFRESH EVERYTIME
 
 ## HTML and CSS
 
@@ -22,6 +24,7 @@ This document summarizes the lessons and knowledge gained during the development
 
 - Learned the importance of splitting CSS files into smaller, logical sections (`header.css`, `footer.css`, etc.) to maintain modularity.
 - Used `.btn` class for default button styles and added specific classes for variations to avoid redundancy.
+- Learned to style the same line of text with differnt styling by wrapping the individuals texts with span.
 
 ### Footer Integration
 

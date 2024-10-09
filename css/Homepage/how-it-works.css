@@ -1,14 +1,14 @@
 /* How It Works Section */
 #how-it-works {
     padding: 60px 20px;
-    background: linear-gradient(45deg, #ffe0e9, #fff);
+    background: linear-gradient(45deg, #f5e1e1, #fff);
     text-align: center;
 }
 
 #how-it-works h2 {
     font-size: 2.5rem;
     margin-left: 100px;
-    color: #d6336c;
+    color: #057c85;
     margin-bottom: 40px;
     animation: fadeIn 1s ease-in-out;
     text-align: left;
