@@ -1,96 +1,69 @@
 /* Why choose us */
-#why-choose-us {
-    padding: 60px 20px; /* Top and bottom padding for space, 20px for left and right padding */
-    background-color: #f8f9fa;
-    text-align: center;
+.why-choose-us {
+    background-color: #ffffff;
+    padding: 60px 0;
 }
 
-#why-choose-us h2 {
+.why-choose-us .container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Section Title */
+.why-choose-us h2 {
     font-size: 2.5rem;
-    color: #333;
+    color: #d6336c; /* Pink color to match the Carnation Joy theme */
     margin-bottom: 40px;
 }
 
+.section-description {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 60px;
+}
+
+/* Values Container */
 .values-container {
-    max-width: 1200px; /* Set a maximum width to keep content contained */
-    margin: 0 auto; /* Center the container */
     display: flex;
-    gap: 20px; /* Add space between boxes */
-    padding: 0 20px; /* Add padding for white space on the left and right */
-    flex-wrap: nowrap; /* Prevent wrapping to keep the boxes in one row */
-    justify-content: space-between; /* Ensure consistent space between boxes */
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensures even spacing between columns */
+    gap: 30px;
 }
 
-.value-box {
-    background-color: #b19cd9; /* Default purple color, adjust for each box below */
-    color: #ffffff;
-    width: calc((100% - 40px) / 3); /* Three boxes with equal width and spacing */
+/* Individual Value Items */
+.value-item {
+    flex: 1 1 calc(33.33% - 20px); /* Ensures each value-item takes one-third of the width */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    position: relative;
-    min-width: 250px; /* Minimum width to avoid the boxes becoming too small */
+    box-sizing: border-box;
+    min-width: 280px; /* Ensures responsiveness */
+    gap: 30px;
 }
 
-.value-box img {
-    width: 50px;
-    margin-bottom: 15px;
+.value-item img {
+    width: 80px;
+    margin-bottom: 25px;
 }
 
-.value-box h3 {
+.value-item h3 {
     font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #d6336c; /* Pink color for heading */
+}
+
+.value-item p {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.7;
     margin-bottom: 15px;
 }
 
-.value-box p {
-    font-size: 1rem;
-    margin-bottom: 20px;
-}
-
-/* Specific Colors for Each Box */
-.value-box:nth-child(1) {
-    background-color: #b19cd9; /* Purple */
-}
-
-.value-box:nth-child(2) {
-    background-color: #ff69b4; /* Pink */
-}
-
-.value-box:nth-child(3) {
-    background-color: #ffb6c1; /* Light floral pink */
-}
-
-.learn-more-btn {
-    background: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.learn-more-btn:hover {
-    background: #ffffff;
-    color: #007bff;
-}
-
-.why-text {
-    max-width: 800px; /* Set a max width for text section for better readability */
-    margin: 40px auto 0 auto; /* Center align and add some top margin */
-    padding: 0 20px; /* Padding for left and right to keep space */
-    text-align: center;
-}
-
-.why-text h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.why-text p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 20px;
+/* Optional: Add a line above each item */
+.value-item::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ff69b4; /* Pink color for the line */
+    margin-bottom: 60px;
+    border-radius: 1px;
 }

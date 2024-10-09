@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="css/Homepage/testimonials.css">
     <link rel="stylesheet" href="css/Homepage/how-it-works.css">
     <link rel="stylesheet" href="css/Homepage/why-choose-us.css">
+    <!-- Link to your footer stylesheet -->
+    <link rel="stylesheet" href="css/Footer/footer.css">
 </head>
 <body>
     <header>
@@ -164,36 +166,46 @@
         </div>
     </section>
 
-    <section id="why-choose-us">
-        <h2>Why Choose Us</h2>
-        <div class="values-container">
-            <div class="value-box">
-                <img src="images/compassion.png" alt="Compassion Icon">
-                <h3>Compassionate Care</h3>
-                <p>We care deeply for each person, treating them with the dignity and respect they deserve.</p>
-                <a href="#learn-more" class="learn-more-btn">Learn more</a>
+    <section class="why-choose-us">
+        <div class="container">
+            <h2>Our Principles</h2>
+            <p class="section-description">Carnation Joy’s purpose is enabled by three long-held principles that explain how we do business.</p>
+            <div class="values-container">
+                <div class="value-item">
+                    <div class="line"></div>
+                    <img src="images/compassion.png" alt="Opportunity Icon">
+                    <h3>Compassion</h3>
+                    <p>We treat every person with kindness and empathy, honoring their unique needs and experiences.</p>
+                    <p>We believe in listening deeply and responding with heartfelt care, fostering a sense of belonging for everyone.</p>
+                </div>
+                <div class="value-item">
+                    <div class="line"></div>
+                    <img src="images/handshake.png" alt="Accountability Icon">
+                    <h3>Respect</h3>
+                    <p>Respect is at the core of everything we do.</p>
+                    <p>We value the dignity of every individual, providing services that respect personal choices and celebrate the diversity of our community.</p>
+                    <p>We honor the wishes, culture, and independence of those we support.</p>
+                </div>
+                <div class="value-item">
+                    <div class="line"></div>
+                    <img src="images/success.png" alt="Integrity Icon">
+                    <h3>Empowerment</h3>
+                    <p>We empower those we care for by encouraging independence and supporting self-determination.</p>
+                    <p>We believe in nurturing confidence, promoting activities, and helping individuals live life to their fullest potential with joy and purpose.</p>
+                </div>
             </div>
-            <div class="value-box">
-                <img src="images/community.png" alt="Community Icon">
-                <h3>Community Focus</h3>
-                <p>We encourage participation in social activities to keep individuals engaged and happy.</p>
-                <a href="#learn-more" class="learn-more-btn">Learn more</a>
-            </div>
-            <div class="value-box">
-                <img src="images/quality.png" alt="Quality Icon">
-                <h3>High-Quality Services</h3>
-                <p>Our carers are trained professionals who provide the best services tailored to each individual.</p>
-                <a href="#learn-more" class="learn-more-btn">Learn more</a>
-            </div>
-        </div>
-    
-        <div class="why-text">
-            <h3>Putting Your Needs First</h3>
-            <p>Whether you are staying for a few weeks or living in a Carnation Joy home, you'll be part of a warm and welcoming community. No matter your needs or circumstances, we strive to provide personalized care that suits you.</p>
-            <a href="#contact" class="btn-primary">Contact Us Today</a>
         </div>
     </section>
 
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

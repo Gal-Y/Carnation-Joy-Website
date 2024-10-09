@@ -1,0 +1,69 @@
+/* footer.css */
+.footer-container {
+    background-color: #000000; /* Dark background for contrast */
+    color: #ffffff;
+    padding: 40px;
+    text-align: left;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-disclaimer, .footer-social, .footer-nav {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px; /* Ensures each section has minimum width */
+}
+
+.footer-disclaimer h4,
+.footer-social h4,
+.footer-nav h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.footer-disclaimer p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links li a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links li a:hover {
+    color: #ff69b4; /* Pink color for the hover effect */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav ul li {
+    margin-bottom: 10px;
+}
+
+.footer-nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #ff69b4;
+}
