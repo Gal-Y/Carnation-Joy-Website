@@ -1,0 +1,102 @@
+<!-- disability-care.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disability Care - Carnation Joy</title>
+    <!-- Link to Google Fonts (e.g., Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to your main stylesheet -->
+    <link rel="stylesheet" href="../css/Homepage/general.css">
+    <link rel="stylesheet" href="../css/Homepage/header.css">
+    <link rel="stylesheet" href="../css/Homepage/nav.css">
+    <link rel="stylesheet" href="../css/Disability-Care/disability.css">
+    <!-- Link to your footer stylesheet -->
+    <link rel="stylesheet" href="../css/Footer/footer.css">
+</head>
+<body>
+    <header>
+        <div class="top-container">
+            <div class="logo-container">
+                <a href="index.html" class="site-title-container">
+                    <img src="../images/logo.jfif" alt="Carnation Joy Logo" class="logo">
+                    <div>
+                        <h1 class="site-title">
+                            <span class="carnation"><i>Carnation</i></span> <span class="joy-care"><i>Joy Care</i></span>
+                        </h1>
+                        <span class="site-subtitle">Aged and Disability Specialist</span>
+                    </div>
+                </a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:carnationjoycare@gmail.com" class="email-button">
+                    <img src="../images/email.png" alt="Email Icon"> carnationjoycare@gmail.com
+                </a>
+                <span><img src="../images/location.png" alt="Address Icon"> Shop 3/ 10017-10019 Victoria Road, West Ryde NSW 2114</span>
+                <a href="tel:0452683988" class="call-button">
+                    <img src="../images/phone.png" alt="Phone Icon"> Call us: 0452683988
+                </a>
+            </div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="disability-care.html">Disability Care</a>
+                            <a href="#">Aged Care</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="about.html">Donate</a></li>
+                    <li class="emphasized"><a href="become-a-carer.html">Become a Carer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Comprehensive Disability Care</h1>
+            <p>Empowering people with disabilities to lead fulfilling, independent lives through compassionate care and personalized support.</p>
+        </div>
+    </section>
+
+    <section class="services-overview">
+        <div class="container">
+            <h2>Our Disability Care Services</h2>
+            <p>At Carnation Joy, we provide a wide range of services to support individuals with disabilities. Our team is dedicated to helping each individual achieve their goals while respecting their independence and dignity.</p>
+            <div class="services-list">
+                <div class="service-item">
+                    <img src="images/services/personal_assistance.png" alt="Personal Assistance">
+                    <h3>Personal Assistance</h3>
+                    <p>We offer support with daily tasks, such as dressing, grooming, and managing day-to-day activities, all tailored to your needs.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/transportation.png" alt="Transportation Support">
+                    <h3>Transportation Support</h3>
+                    <p>Our reliable transportation services help individuals maintain independence by ensuring they get to medical appointments and community events safely.</p>
+                </div>
+                <div class="service-item">
+                    <img src="images/services/community_participation.png" alt="Community Participation">
+                    <h3>Community Participation</h3>
+                    <p>We encourage involvement in social activities, helping individuals become active members of their community while building meaningful relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+    <script>
+      fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        });
+    </script>
+</body>
+</html>
+

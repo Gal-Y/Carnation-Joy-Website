@@ -1,0 +1,100 @@
+/* disability-care.css */
+
+/* Hero Section */
+.hero-section {
+    background-color: #f7e9ed; /* Light pink inspired by carnations */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: #d6336c; /* Carnation-inspired pink */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-section p {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Services Overview */
+.services-overview {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.services-overview .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-overview h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.services-overview p {
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+/* Services List */
+.services-list {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    flex: 1;
+    min-width: 280px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+}
+
+.service-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #d6336c;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-list {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
