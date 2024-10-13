@@ -41,3 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setInterval(showNextTestimonial, 10000); // Rotate every 10 seconds
 });
+
+
+
+

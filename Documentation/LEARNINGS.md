@@ -32,6 +32,8 @@ This document summarizes the lessons and knowledge gained during the development
 
 ## JavaScript
 
+- Learned how javascript is used to create dynamic elements on the webpage including animations, scrolls etc..
+
 ### Dynamic Content Loading
 
 - Used the `fetch` API to dynamically load footer content, which improved reusability across the website.
