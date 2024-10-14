@@ -1,0 +1,210 @@
+/* General Styles for Aged Care Page */
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    background-color: #fefefe;
+    color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 20px;
+    background-color: #ffeef1; /* Light floral background inspired by carnations */
+    text-align: center;
+}
+
+.hero-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: #d6336c;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* Services Overview Section */
+.services-overview {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+}
+
+.services-overview .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-overview h2 {
+    font-size: 2.5rem;
+    color: #d6336c;
+    margin-bottom: 40px;
+}
+
+.services-overview p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.service-item {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.service-item h3 {
+    font-size: 1.8rem;
+    color: #d6336c;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Get in Touch Section */
+.get-in-touch {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fef3f5; /* Light pink inspired by carnations */
+}
+
+.get-in-touch .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.get-in-touch .btn-primary {
+    margin-top: 20px;
+    background-color: #d6336c;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.get-in-touch .btn-primary:hover {
+    background-color: #b8295a;
+    transform: scale(1.05);
+}
+
+.timeline {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+}
+
+.timeline-header {
+    text-align: center;
+    font-size: 2em;
+    color: #4a56e2;
+}
+
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #cccccc;
+    position: relative;
+    padding-top: 20px;
+}
+
+.timeline-item {
+    text-align: center;
+    width: 18%;
+}
+
+.timeline-date {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.timeline-details p {
+    margin: 5px 0;
+}
+
+/* Styling timeline nodes */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 10px;
+    height: 10px;
+    background-color: #4a56e2;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item:nth-child(1)::before {
+    left: 10%;
+}
+
+.timeline-item:nth-child(2)::before {
+    left: 32%;
+}
+
+.timeline-item:nth-child(3)::before {
+    left: 54%;
+}
+
+.timeline-item:nth-child(4)::before {
+    left: 76%;
+}
+
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-list, .journey-steps {
+        flex-direction: column;
+    }
+
+    .service-item, .journey-step {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1, .aged-care-journey h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p,
+    .services-overview p,
+    .aged-care-journey p {
+        font-size: 1.1rem;
+    }
+}

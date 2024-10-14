@@ -183,6 +183,14 @@
     left: -15px;
 }
 
+/* Get in touch button */
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Use flex-end for right, center for middle */
+    margin-top: 50px;
+    margin-left: 160px;
+}
+
 /* FAQ Section */
 .faq-section {
     padding: 60px 20px;
