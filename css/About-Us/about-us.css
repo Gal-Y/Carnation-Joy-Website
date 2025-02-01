@@ -1,0 +1,75 @@
+/* About Us Page Styles */
+
+/* Hero Section */
+.hero-section {
+    background-color: #fef3f5;
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-out;
+}
+
+.hero-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Mission & Story */
+.mission-section,
+.our-story {
+    background-color: #fff;
+}
+
+/* Team Section */
+.team-section {
+    background-color: #f8f9fa;
+}
+
+.team-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+    max-width: 250px;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.team-member h3 {
+    margin-top: 10px;
+    color: #d6336c;
+}
+
+/* Get in Touch */
+.get-in-touch {
+    background-color: #fef3f5;
+}
+
+.get-in-touch .btn-primary {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #d6336c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.get-in-touch .btn-primary:hover {
+    background-color: #b8295a;
+    transform: scale(1.05);
+}
