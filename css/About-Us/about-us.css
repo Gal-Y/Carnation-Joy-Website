@@ -1,75 +1,196 @@
-/* About Us Page Styles */
-
-/* Hero Section */
-.hero-section {
-    background-color: #fef3f5;
-    padding: 60px 20px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease-out;
+:root {
+    --primary-color: #057c85;
+    --secondary-color: #f7e9ed;
+    --text-dark: #333;
+    --text-light: #fff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+    --animation-duration: 0.8s;
 }
 
-.hero-section.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Sections */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-/* Mission & Story */
-.mission-section,
-.our-story {
-    background-color: #fff;
-}
-
-/* Team Section */
-.team-section {
-    background-color: #f8f9fa;
-}
-
-.team-list {
+/* =====================
+   About Hero Section
+   ===================== */
+   .about-hero {
+    position: relative;
+    background: url("../../images/About-us/floral.jpg") no-repeat center center/cover;
+    min-height: 80vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 20px;
+    padding: 2rem 2rem 4rem; /* Add bottom padding for overlap space */
 }
 
-.team-member {
-    text-align: center;
-    max-width: 250px;
-}
-
-.team-member img {
+.hero-overlay {
+    display: flex;
+    gap: 2rem;
+    max-width: 1100px;
     width: 100%;
-    border-radius: 10px;
+    padding: 2.5rem 2.5rem 4rem; /* Extra bottom padding */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius);
+    flex-wrap: wrap;
+    position: relative;
+    margin-top: -40px; /* Pull overlay up slightly */
 }
 
-.team-member h3 {
-    margin-top: 10px;
-    color: #d6336c;
+/* =====================
+   Story Content
+   ===================== */
+   .about-content {
+    flex: 1 1 50%;
+    padding: 2rem;
+    background: var(--text-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    min-width: 300px;
+    position: relative;
+    z-index: 200; /* Higher than overlay */
+    transform: translateY(-60px); /* Overlap upwards */
+    margin-bottom: -40px; /* Compensate for overlap */
 }
 
-/* Get in Touch */
-.get-in-touch {
-    background-color: #fef3f5;
-}
-
-.get-in-touch .btn-primary {
-    margin-top: 20px;
+.about-content h2 {
+    font-size: 2.5rem;
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
     display: inline-block;
-    padding: 15px 30px;
-    background-color: #d6336c;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 30px;
-    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 1.5rem;
 }
 
-.get-in-touch .btn-primary:hover {
-    background-color: #b8295a;
-    transform: scale(1.05);
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
 }
+
+/* =====================
+   Get in Touch Section
+   ===================== */
+.get-in-touch {
+    flex: 1 1 40%;
+    padding: 2rem;
+    background: var(--secondary-color);
+    border-radius: var(--border-radius);
+    z-index: 150; /* Between overlay and content */
+    transform: translateY(-20px); /* Subtle overlap */
+}
+
+.get-in-touch h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.button-container {
+    width: 100%;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+    font-size: 1.1rem;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.btn-primary:hover {
+    background: #04646b;
+    transform: translateY(-2px);
+}
+
+.get-in-touch-call {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: var(--transition);
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+/* Ensure navigation dropdown is visible */
+.nav-container {
+    z-index: 1000; /* Higher than all hero elements */
+    position: relative; /* Required for z-index to work */
+}
+
+
+/* Add this to your existing CSS */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-overlay > * {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Staggered animations */
+.about-content {
+    animation-delay: 0.3s;
+}
+
+.get-in-touch {
+    margin-top: 40px; /* Push down to make space for overlap */
+    z-index: 1; /* Keep behind the story content */
+}
+
+/* =====================
+   Responsive Design
+   ===================== */
+@media (max-width: 1024px) {
+    .hero-overlay {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .about-content,
+    .get-in-touch {
+        width: 100%;
+        flex-basis: 100%;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+
+    .get-in-touch h3 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        padding: 1rem;
+    }
+
+    .hero-overlay {
+        padding: 1rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.8rem;
+        display: block;
+        text-align: center;
+    }
+}
+
