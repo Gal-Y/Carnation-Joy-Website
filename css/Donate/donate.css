@@ -1,0 +1,46 @@
+/* Coming Soon Section */
+.donate-coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.donate-coming-soon .container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.donate-coming-soon h1 {
+    font-size: 2.5rem;
+    color: #057c85;
+    margin-bottom: 20px;
+}
+
+.donate-coming-soon p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Loader Animation */
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #057c85;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.5s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,89 @@
+.carer-form-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.carer-form-section .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carer-form-section h2 {
+    font-size: 2.5rem;
+    color: #057c85;
+    margin-bottom: 20px;
+}
+
+.carer-form-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+#carer-form label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+#carer-form input,
+#carer-form select,
+#carer-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+#carer-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background: #057c85;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    /* Remove display: flex and justify-content */
+    width: auto; 
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background: #045b63;
+}
+
+/* Ensure it aligns properly within the form */
+#carer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers elements inside */
+}
+
+#carer-form button {
+    width: auto; /* Allow it to fit its content */
+    max-width: none; /* Remove any restriction */
+    padding: 12px 24px; /* Ensure padding looks good */
+}

@@ -1,0 +1,122 @@
+<!-- age-care.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aged Care - Carnation Joy</title>
+    <!-- Link to Google Fonts (e.g., Lato) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to your main stylesheet -->
+    <link rel="stylesheet" href="../css/Homepage/general.css">
+    <link rel="stylesheet" href="../css/Homepage/header.css">
+    <link rel="stylesheet" href="../css/Homepage/nav.css">
+    <link rel="stylesheet" href="../css/Donate/donate.css">
+    <link rel="stylesheet" href="../css/Contact/contact.css">
+    <!-- Link to your footer stylesheet -->
+    <link rel="stylesheet" href="../css/Footer/footer.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-container">
+            <div class="logo-container">
+                <a href="../index.html" class="site-title-container">
+                    <img src="../images/logo.jfif" alt="Carnation Joy Logo" class="logo">
+                    <div>
+                        <h1 class="site-title">
+                            <span class="carnation"><i>Carnation</i></span> <span class="joy-care"><i>Joy
+                                    Care</i></span>
+                        </h1>
+                        <span class="site-subtitle">Aged and Disability Specialist</span>
+                    </div>
+                </a>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:carnationjoycare@gmail.com" class="email-button">
+                    <img src="../images/email.png" alt="Email Icon"> carnationjoycare@gmail.com
+                </a>
+                <span><img src="../images/location.png" alt="Address Icon"> Shop 3/ 10017-10019 Victoria Road, West Ryde
+                    NSW 2114</span>
+                <a href="tel:0452683988" class="call-button">
+                    <img src="../images/phone.png" alt="Phone Icon"> Call us: 0452683988
+                </a>
+            </div>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Services</a>
+                        <div class="dropdown-content">
+                            <a href="disability-care.html">Disability Care</a>
+                            <a href="aged-care.html">Aged Care</a>
+                        </div>
+                    </li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="donate.html">Donate</a></li>
+                    <li class="emphasized"><a href="become-carer.html">Become a Carer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Have questions or need assistance? Fill out the form below, and we’ll get back to you as soon as possible.</p>
+
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="enquiry">Nature of My Enquiry</label>
+                    <select id="enquiry" name="enquiry" required>
+                        <option value="" disabled selected>Select an option</option>
+                        <option value="aged-care">Aged Care</option>
+                        <option value="disability-care">Disability Care</option>
+                        <option value="employment">Employment</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Submit</button>
+            </form>
+            
+            <p id="form-message" class="success-message"></p>
+        </div>
+    </section>
+
+
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+    <script src="../js/contact.js"></script>
+</body>
+
+</html>

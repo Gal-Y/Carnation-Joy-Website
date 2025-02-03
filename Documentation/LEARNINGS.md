@@ -17,6 +17,7 @@ This document summarizes the lessons and knowledge gained during the development
 - Using a local server (`python -m http.server`, or VS Code's Live Server) is essential for proper testing, especially for components like footers loaded via JavaScript.
 - Learned to use live server extension for components that are hidden on default browswer, allowing tracking of workflow locally.
   - THIS WAS SO HELPFUL EVEN FOR TRACKING NORMAL WORK I DONT NEED TO REFRESH EVERYTIME
+- Will integrate payment gateway API for donation in the future for secure payments.
 
 ## HTML and CSS
 
@@ -25,6 +26,7 @@ This document summarizes the lessons and knowledge gained during the development
 - Learned the importance of splitting CSS files into smaller, logical sections (`header.css`, `footer.css`, etc.) to maintain modularity.
 - Used `.btn` class for default button styles and added specific classes for variations to avoid redundancy.
 - Learned to style the same line of text with differnt styling by wrapping the individuals texts with span.
+- Encountered a classic css override issue where the names in a file coexist with another one causing conflict
 
 ### Footer Integration
 
@@ -59,6 +61,10 @@ This document summarizes the lessons and knowledge gained during the development
 - **Enhance Responsiveness**: Some sections still need better responsiveness for small screen sizes.
 - **Use SCSS**: Consider using a CSS pre-processor like SCSS to manage styles more efficiently.
 - **Accessibility Enhancements**: Add ARIA labels and roles to improve accessibility.
+
+## Cloud Learnings
+
+- Understanding the different databases AWS Offers and picking the best one for this project case
 
 ## Final Thoughts
 
