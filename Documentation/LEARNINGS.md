@@ -55,6 +55,7 @@ This document summarizes the lessons and knowledge gained during the development
 - Modularize CSS to keep each section manageable.
 - Use semantic HTML tags (e.g., `<section>`, `<footer>`, `<header>`) for better structure and accessibility.
 - Keep reusable components like headers and footers in separate files to make maintenance easier.
+- linked github actions and created workflow and linked to aws s3 so all changes pushed is automatically pushed to s3 bucket
 
 ## Future Improvements
 
@@ -67,6 +68,7 @@ This document summarizes the lessons and knowledge gained during the development
 - Understanding the different databases AWS Offers and picking the best one for this project case
 - Learnt how to deploy the package locally to lambda as editing in lambda's editor did not work
 - best practise without AWS CLI is to do everything locally deploy it and test it
+- learnt how to use s3 bucket to host a static website
 
 ## Final Thoughts
 
