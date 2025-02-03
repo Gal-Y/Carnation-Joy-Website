@@ -65,6 +65,8 @@ This document summarizes the lessons and knowledge gained during the development
 ## Cloud Learnings
 
 - Understanding the different databases AWS Offers and picking the best one for this project case
+- Learnt how to deploy the package locally to lambda as editing in lambda's editor did not work
+- best practise without AWS CLI is to do everything locally deploy it and test it
 
 ## Final Thoughts
 
