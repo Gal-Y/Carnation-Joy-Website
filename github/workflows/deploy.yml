@@ -21,4 +21,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync Files to S3
-        run: aws s3 sync ./ s3://carnation-joy-website --delete
+        run: aws s3 sync ./ s3://carnationjoycare.com.au --delete
