@@ -69,6 +69,8 @@ This document summarizes the lessons and knowledge gained during the development
 - Learnt how to deploy the package locally to lambda as editing in lambda's editor did not work
 - best practise without AWS CLI is to do everything locally deploy it and test it
 - learnt how to use s3 bucket to host a static website
+- If I want to use AWS Route 53 with my own domain and link that to a s3 end point. I have to create the s3 bucket name exactly as the domain
+- Created a secondary bucket with www. infront and redirects to the primary bucket dealing with anyone accessing the site using www.
 
 ## Final Thoughts
 
