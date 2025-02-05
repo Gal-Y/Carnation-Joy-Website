@@ -166,23 +166,47 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    .header-container {
+/* === 📱 MOBILE VIEW (iPhone 12/13/14, Pixel, Samsung) === */
+@media (max-width: 400px) {
+    /* Keep only logo and title */
+    .contact-info {
+        display: none; /* Hide extra details */
+    }
+
+    .top-container {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-        padding: 20px 20px;
-    }
-    
-    .header-content {
-        margin-bottom: 20px;
-        padding-right: 0;
+        padding: 10px 15px;
     }
 
-    .header-image {
-        max-width: 100%;
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px; /* Add some space between logo and text */
     }
 
-    .header-image img {
-        max-width: 100%;
+    .logo {
+        width: 65px; /* Reduce size for better alignment */
+        margin-bottom: 0;
+    }
+
+    .site-title {
+        font-size: 1.6rem; /* Reduce size so it fits in one line */
+        white-space: nowrap; /* Prevents it from wrapping into two lines */
+        text-align: left;
+    }
+
+    /* Center the subtitle below the title */
+    .site-subtitle {
+        font-size: 1rem;
+        text-align: center;
+        display: block;
+        width: 100%;
+        margin-top: 5px;
     }
 }
+
+
