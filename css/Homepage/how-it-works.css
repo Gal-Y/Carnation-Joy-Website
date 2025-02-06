@@ -62,3 +62,43 @@
 .step a:hover {
     color: #0056b3;
 }
+
+@media (max-width: 768px) {
+    .steps-container {
+        display: flex;
+        flex-direction: column;   /* Stack items vertically */
+        align-items: center;      /* Center the items */
+        gap: 20px;                /* Add spacing between items */
+    }
+
+    .step {
+        flex: 1 1 100%;           /* Full width on mobile */
+        max-width: 90%;           /* Add padding on the sides */
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;       /* Center-align content */
+    }
+
+    .step img {
+        width: 40px;              /* Slightly reduce icon size */
+        height: 40px;
+        margin-bottom: 10px;
+    }
+
+    .step h3 {
+        font-size: 1.4rem;        /* Adjust heading size */
+        margin-bottom: 8px;
+    }
+
+    .step p {
+        font-size: 1rem;          /* Adjust paragraph size */
+        line-height: 1.5;
+    }
+
+    #how-it-works h2 {
+        text-align: center;       /* Center the heading */
+        margin: 0 0 20px 0;       /* Remove left margin */
+        font-size: 2rem;          /* Reduce font size slightly */
+    }
+}
+

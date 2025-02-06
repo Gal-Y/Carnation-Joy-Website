@@ -118,4 +118,10 @@
     .service-item {
         flex: 0 0 100%;
     }
+
+    #services h2 {
+        font-size: 1.6rem;   /* Reduce font size for better fit */
+        white-space: nowrap; /* Prevent text from wrapping into two lines */
+        text-align: center;  /* Center-align for better appearance */
+    }
 }
