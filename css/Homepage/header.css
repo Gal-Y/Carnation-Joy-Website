@@ -209,12 +209,3 @@
     }
 }
 
-/* Targets iPhones specifically */
-@supports (-webkit-touch-callout: none) and (not (translate: none)) {
-    @media (max-width: 430px) {
-      body { border: 5px solid green !important; }
-      .contact-info { display: none !important; }
-    }
-  }
-
-

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("nav");
+    const nav = document.querySelector("nav ul");
 
     menuToggle.addEventListener("click", function() {
         nav.classList.toggle("nav-open");
