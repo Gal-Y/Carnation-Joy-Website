@@ -72,24 +72,6 @@ The site is deployed using:
 - **AWS S3** for static website hosting
 - **AWS CloudFront** for content distribution
 
-For development, ensure you invalidate CloudFront cache when pushing updates:
-```bash
-aws cloudfront create-invalidation --distribution-id YOUR_DISTRIBUTION_ID --paths "/*"
-```
-
-## 🤝 Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature-name`)
-3. Commit your changes (`git commit -m 'Add new feature'`)
-4. Push to the branch (`git push origin feature-name`)
-5. Open a pull request
-
-## 📜 License
-This project is licensed under the [MIT License](LICENSE).
-
----
-
 ### 👤 Author
 **Galen Yuan**  
 Email: galenyuan1@gmail.com
