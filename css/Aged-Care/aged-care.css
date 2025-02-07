@@ -193,13 +193,23 @@
     .service-item {
         flex: 1 1 100%;
     }
-}
 
-@media (max-width: 480px) {
-    .hero-section h1, .timeline-header {
-        font-size: 2.5rem;
+    .button-container {
+        justify-content: center;   /* ✅ Center the button on mobile */
+        margin-left: 0;            /* ❌ Remove left margin on mobile */
     }
-    .hero-section p, .services-overview p {
-        font-size: 1.1rem;
+
+    .btn-primary {
+        width: auto;               /* Ensure the button fits content */
+        margin: 0 auto;            /* Center horizontally */
+    }
+
+    .timeline-header {
+        font-size: 1.5rem;          /* Reduce font size slightly */
+        white-space: nowrap;        /* Prevent text from wrapping to the next line */
+        overflow: hidden;           /* Hide any overflow beyond the screen */
+        text-overflow: ellipsis;    /* Add '...' if the text overflows */
+        padding: 0 10px;            /* Add some horizontal padding */
+        text-align: center;         /* Keep it centered */
     }
 }

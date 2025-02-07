@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav ul");
+    
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("nav-open");
+    });
+});
+
 document.getElementById("contact-form").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -61,3 +70,4 @@ document.getElementById("contact-form").addEventListener("submit", async functio
         submitButton.innerText = "Submit";
     }
 });
+

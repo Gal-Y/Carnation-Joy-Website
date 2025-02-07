@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         revealElements.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
-            const revealPoint = 150;
+            const revealPoint = 100;
 
             if (elementTop < windowHeight - revealPoint) {
                 el.classList.add('active');
@@ -23,3 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('active');
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav ul");
+
+    menuToggle.addEventListener("click", function() {
+        nav.classList.toggle("nav-open");
+    });
+});
+

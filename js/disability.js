@@ -1,13 +1,17 @@
+// Wait until the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Reveal animation logic for elements on scroll
-    const revealElements = document.querySelectorAll('.reveal');
-
+    /* ======================================
+       Generic Reveal Animation Logic
+       Targets elements with the "reveal" class,
+       except those that are timeline items.
+       ====================================== */
+    const genericRevealElements = document.querySelectorAll('.reveal:not(.timeline-item)');
+    
     function revealOnScroll() {
         const windowHeight = window.innerHeight;
-        revealElements.forEach(el => {
+        const revealPoint = 150;
+        genericRevealElements.forEach(el => {
             const elementTop = el.getBoundingClientRect().top;
-            const revealPoint = 150;
-
             if (elementTop < windowHeight - revealPoint) {
                 el.classList.add('active');
             } else {
@@ -15,51 +19,48 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
+    
+    // Check generic reveal elements on scroll and immediately on load
     window.addEventListener('scroll', revealOnScroll);
-
-    // Initial check in case elements are already in view
     revealOnScroll();
-
-    // Initial load reveal for elements in view on load
-    const revealLoadElements = document.querySelectorAll('.reveal-load');
-    revealLoadElements.forEach(el => {
+    
+    // Immediately reveal elements that should load revealed
+    document.querySelectorAll('.reveal-load').forEach(el => {
         el.classList.add('active');
     });
-
-    // Scroll event logging for debugging purposes
-    window.addEventListener('scroll', () => {
-        console.log('Scroll event detected. Checking elements for reveal animation.');
-    });
-
-    // Debugging: Log reveal elements status
-    revealElements.forEach((el, index) => {
-        console.log(`Reveal element ${index + 1} initial position:`, el.getBoundingClientRect().top);
-    });
-
-    // Interactive Timeline Logic
+    
+    
+    /* ======================================
+       Timeline Reveal Logic
+       Handles timeline items independently.
+       (These items will have the "reveal" class toggled
+       according to their own viewport trigger.)
+       ====================================== */
     const timelineItems = document.querySelectorAll('.timeline-item');
-
+    
     function revealTimelineItems() {
+        // Set trigger at 80% of the viewport height
+        const triggerBottom = window.innerHeight * 0.8;
         timelineItems.forEach(item => {
             const itemTop = item.getBoundingClientRect().top;
-            const windowHeight = window.innerHeight;
-
-            if (itemTop < windowHeight - 50) {
+            if (itemTop < triggerBottom) {
                 item.classList.add('reveal');
+            } else {
+                item.classList.remove('reveal');
             }
         });
     }
-
-    // Initial check
-    revealTimelineItems();
-
-    // Check on scroll
+    
+    // Check timeline items on scroll and immediately on load
     window.addEventListener('scroll', revealTimelineItems);
-
-    // Interactive FAQ Section Logic
+    revealTimelineItems();
+    
+    
+    /* ======================================
+       FAQ Section Logic
+       Toggles open/closed state on click.
+       ====================================== */
     const faqItems = document.querySelectorAll('.faq-item');
-
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         question.addEventListener('click', () => {
@@ -71,5 +72,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 answer.style.maxHeight = 0;
             }
         });
+    });
+    
+    // Optional: Debug logging for generic reveal elements (remove if not needed)
+    genericRevealElements.forEach((el, index) => {
+        console.log(`Generic reveal element ${index + 1} initial position:`, el.getBoundingClientRect().top);
+    });
+    
+    // Optional: Log scroll events for debugging purposes
+    window.addEventListener('scroll', () => {
+        console.log('Scroll event detected. Checking reveal animations.');
+    });
+});
+    
+    
+/* ======================================
+   Navigation Toggle Logic
+   ====================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav ul");
+    
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("nav-open");
     });
 });

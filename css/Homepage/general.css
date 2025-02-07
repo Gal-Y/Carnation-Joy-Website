@@ -17,7 +17,6 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: #ffffff; /* Ensure background color is white */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 /* === MAKE TEXT SCALABLE === */

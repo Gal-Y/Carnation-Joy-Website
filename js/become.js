@@ -59,3 +59,12 @@ document.getElementById("carer-form").addEventListener("submit", async function 
         submitButton.innerText = "Submit";
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav ul");
+    
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("nav-open");
+    });
+});
