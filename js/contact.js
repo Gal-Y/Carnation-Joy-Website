@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.getElementById("contact-form").addEventListener("submit", async function (event) {
+document.getElementById("contactForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
     // Get form values
@@ -40,12 +40,12 @@ document.getElementById("contact-form").addEventListener("submit", async functio
     }
 
     // Disable submit button while submitting
-    const submitButton = document.querySelector("#contact-form button");
+    const submitButton = document.querySelector("#contactForm button");
     submitButton.disabled = true;
     submitButton.innerText = "Submitting...";
 
     // API Gateway Endpoint (Replace with your actual AWS API Gateway URL)
-    const apiEndpoint = "https://your-api-id.execute-api.region.amazonaws.com/prod/contact-form";
+    const apiEndpoint = "https://6l20ufzu4d.execute-api.ap-southeast-2.amazonaws.com/prod";
 
     try {
         const response = await fetch(apiEndpoint, {
