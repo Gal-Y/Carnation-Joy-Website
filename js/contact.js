@@ -15,51 +15,48 @@ document.getElementById("contactForm").addEventListener("submit", async function
         name: document.getElementById("name").value.trim(),
         email: document.getElementById("email").value.trim(),
         phone: document.getElementById("phone").value.trim(),
-        enquiry: document.getElementById("enquiry").value, // Dropdown selection
+        enquiry: document.getElementById("enquiry").value,
         message: document.getElementById("message").value.trim(),
     };
 
-    // Basic Validation: Ensure all fields are filled
+    // Basic Validation
     if (!formData.name || !formData.email || !formData.phone || !formData.enquiry || !formData.message) {
         alert("Please fill in all fields.");
         return;
     }
 
-    // Email validation (basic check)
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(formData.email)) {
         alert("Please enter a valid email address.");
         return;
     }
 
-    // Phone validation (must be numbers and 10-15 characters)
     const phonePattern = /^[0-9]{10,15}$/;
     if (!phonePattern.test(formData.phone)) {
         alert("Please enter a valid phone number (10-15 digits).");
         return;
     }
 
-    // Disable submit button while submitting
     const submitButton = document.querySelector("#contactForm button");
     submitButton.disabled = true;
     submitButton.innerText = "Submitting...";
 
-    // API Gateway Endpoint (Replace with your actual AWS API Gateway URL)
     const apiEndpoint = "https://6l20ufzu4d.execute-api.ap-southeast-2.amazonaws.com/prod";
 
     try {
         const response = await fetch(apiEndpoint, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
         });
 
-        if (response.ok) {
+        const result = await response.json(); // Parse the JSON response
+
+        if (response.ok && result.message === "Submission successful") {
             alert("Your enquiry has been submitted successfully!");
-            document.getElementById("contact-form").reset(); // Reset form after submission
+            document.getElementById("contactForm").reset(); // ✅ Corrected form ID
         } else {
+            console.error("Server Error:", result);
             alert("Error submitting the form. Please try again later.");
         }
     } catch (error) {
