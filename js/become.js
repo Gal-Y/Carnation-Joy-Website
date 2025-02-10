@@ -37,7 +37,7 @@ document.getElementById("carer-form").addEventListener("submit", async function 
     submitButton.innerText = "Submitting...";
 
     // API Gateway Endpoint (Replace with your actual AWS API Gateway URL)
-    const apiEndpoint = "https://6l20ufzu4d.execute-api.ap-southeast-2.amazonaws.com/prod";
+    const apiEndpoint = "https://6l20ufzu4d.execute-api.ap-southeast-2.amazonaws.com/prod/become-carer";
 
     try {
         const response = await fetch(apiEndpoint, {
