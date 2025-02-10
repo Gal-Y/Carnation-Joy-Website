@@ -1,13 +1,20 @@
 document.getElementById("carer-form").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
-    // Create a FormData object to handle file upload
-    const formData = new FormData();
-    formData.append("name", document.getElementById("carer-name").value.trim());
-    formData.append("email", document.getElementById("carer-email").value.trim());
-    formData.append("phone", document.getElementById("carer-phone").value.trim());
-    formData.append("availability", document.getElementById("carer-availability").value);
-    formData.append("comments", document.getElementById("carer-message").value.trim());
+    // Get form values
+    const formData = {
+        name: document.getElementById("carer-name").value.trim(),
+        email: document.getElementById("carer-email").value.trim(),
+        phone: document.getElementById("carer-phone").value.trim(),
+        availability: document.getElementById("carer-availability").value,
+        comments: document.getElementById("carer-message").value.trim()
+    };
+
+    // Basic Validation
+    if (!formData.name || !formData.email || !formData.phone || !formData.enquiry || !formData.message) {
+        alert("Please fill in all fields.");
+        return;
+    }
 
     // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -34,13 +41,19 @@ document.getElementById("carer-form").addEventListener("submit", async function 
     try {
         const response = await fetch(apiEndpoint, {
             method: "POST",
-            body: formData, // Send FormData (including file)
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
         });
 
-        if (response.ok) {
+        const result = await response.json(); // Parse the JSON response
+
+        if (response.ok && result.message === "Application submitted successfully") {
             alert("Your application has been submitted successfully!");
-            document.getElementById("carer-form").reset(); // Reset form after submission
+            document.getElementById("carer-form").reset();
         } else {
+            console.error("Server Error:", result);
             alert("Error submitting the application. Please try again later.");
         }
     } catch (error) {
