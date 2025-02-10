@@ -48,7 +48,7 @@ document.getElementById("carer-form").addEventListener("submit", async function 
     submitButton.innerText = "Submitting...";
 
     // API Gateway Endpoint
-    const apiEndpoint = "https://6l20ufzu4d.execute-api.ap-southeast-2.amazonaws.com/prod/become-carer";
+    const apiEndpoint = "https://fv1dv4vfw7.execute-api.ap-southeast-2.amazonaws.com/prod";
 
     try {
         const response = await fetch(apiEndpoint, {
