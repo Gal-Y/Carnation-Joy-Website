@@ -67,32 +67,42 @@
         <div class="container">
             <h2>Join Our Team</h2>
             <p>Apply to become a carer by filling out the form below. We will review your application and get in touch.</p>
-            
+    
             <form id="carer-form">
-                <label for="carer-name">Full Name</label>
-                <input type="text" id="carer-name" placeholder="Enter your full name" required>
-    
-                <label for="carer-email">Email</label>
-                <input type="email" id="carer-email" placeholder="Enter your email" required>
-    
-                <label for="carer-phone">Phone Number</label>
-                <input type="tel" id="carer-phone" placeholder="Enter your phone number" required>
-    
-                <label for="carer-availability">Availability</label>
-                <select id="carer-availability" required>
-                    <option value="" disabled selected>Select your availability</option>
-                    <option value="full-time">Full-Time</option>
-                    <option value="part-time">Part-Time</option>
-                    <option value="casual">Casual</option>
-                </select>
-    
-                <label for="carer-message">Additional Comments</label>
-                <textarea id="carer-message" placeholder="Tell us more about yourself..."></textarea>
-    
-                <div class="button-container">
-                    <button type="submit" class="btn-submit">Submit</button>
+                <div class="form-group">
+                    <label for="carer-name">Full Name</label>
+                    <input type="text" id="carer-name" name="name" placeholder="Enter your full name" required>
                 </div>
+    
+                <div class="form-group">
+                    <label for="carer-email">Email</label>
+                    <input type="email" id="carer-email" name="email" placeholder="Enter your email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="carer-phone">Phone Number</label>
+                    <input type="tel" id="carer-phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="carer-availability">Availability</label>
+                    <select id="carer-availability" name="availability" required>
+                        <option value="" disabled selected>Select your availability</option>
+                        <option value="full-time">Full-Time</option>
+                        <option value="part-time">Part-Time</option>
+                        <option value="casual">Casual</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="carer-message">Additional Comments</label>
+                    <textarea id="carer-message" name="comments" placeholder="Tell us more about yourself..." rows="5"></textarea>
+                </div>
+    
+                <button type="submit" class="btn-primary">Submit</button>
             </form>
+    
+            <p id="form-message" class="success-message"></p>
         </div>
     </section>
 
