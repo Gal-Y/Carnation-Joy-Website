@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav ul");
+    
+    menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("nav-open");
+    });
+});
+
+
 document.getElementById("carer-form").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -63,13 +73,4 @@ document.getElementById("carer-form").addEventListener("submit", async function 
         submitButton.disabled = false;
         submitButton.innerText = "Submit";
     }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector("nav ul");
-    
-    menuToggle.addEventListener("click", () => {
-        nav.classList.toggle("nav-open");
-    });
 });
