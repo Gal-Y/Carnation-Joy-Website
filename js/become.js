@@ -17,47 +17,47 @@ document.getElementById("carer-form").addEventListener("submit", async function 
         email: document.getElementById("carer-email").value.trim(),
         phone: document.getElementById("carer-phone").value.trim(),
         availability: document.getElementById("carer-availability").value,
-        comments: document.getElementById("carer-message").value.trim()
+        comments: document.getElementById("carer-message").value.trim(),
     };
 
+    console.log(formData); // ✅ Check if data is being captured correctly
+
     // Basic Validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.availability || !formData.comments) {
-        alert("Please fill in all fields.");
+    if (!formData.name || !formData.email || !formData.phone || !formData.availability) {
+        alert("Please fill in all required fields.");
         return;
     }
 
     // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(formData.get("email"))) {
+    if (!emailPattern.test(formData.email)) {
         alert("Please enter a valid email address.");
         return;
     }
 
     // Phone validation (must be numbers and 10-15 characters)
     const phonePattern = /^[0-9]{10,15}$/;
-    if (!phonePattern.test(formData.get("phone"))) {
+    if (!phonePattern.test(formData.phone)) {
         alert("Please enter a valid phone number (10-15 digits).");
         return;
     }
 
-    // Disable submit button while submitting
+    // Disable the submit button while submitting
     const submitButton = document.querySelector("#carer-form button");
     submitButton.disabled = true;
     submitButton.innerText = "Submitting...";
 
-    // API Gateway Endpoint (Replace with your actual AWS API Gateway URL)
+    // API Gateway Endpoint
     const apiEndpoint = "https://6l20ufzu4d.execute-api.ap-southeast-2.amazonaws.com/prod/become-carer";
 
     try {
         const response = await fetch(apiEndpoint, {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
         });
 
-        const result = await response.json(); // Parse the JSON response
+        const result = await response.json(); // Parse JSON response
 
         if (response.ok && result.message === "Application submitted successfully") {
             alert("Your application has been submitted successfully!");
