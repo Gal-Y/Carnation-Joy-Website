@@ -11,7 +11,7 @@ document.getElementById("carer-form").addEventListener("submit", async function 
     };
 
     // Basic Validation
-    if (!formData.name || !formData.email || !formData.phone || !formData.enquiry || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.availability || !formData.comments) {
         alert("Please fill in all fields.");
         return;
     }
