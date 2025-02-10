@@ -9,14 +9,6 @@ document.getElementById("carer-form").addEventListener("submit", async function 
     formData.append("availability", document.getElementById("carer-availability").value);
     formData.append("comments", document.getElementById("carer-message").value.trim());
 
-    // Get file input
-    const resumeFile = document.getElementById("carer-resume").files[0];
-    if (!resumeFile) {
-        alert("Please upload your resume.");
-        return;
-    }
-    formData.append("resume", resumeFile);
-
     // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(formData.get("email"))) {
