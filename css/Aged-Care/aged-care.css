@@ -27,6 +27,24 @@
     line-height: 1.6;
 }
 
+.btn-primary {
+    background-color: #057c85;
+    color: #ffffff;
+    padding: 15px 50px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    align-self: center; /* Center the button */
+    margin-left: 340px;
+}
+
+.btn-primary:hover {
+    background-color: #b8295a;
+    transform: scale(1.05);
+}
+
 /* Services Overview Section */
 .services-overview {
     padding: 80px 20px;
