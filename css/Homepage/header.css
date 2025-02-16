@@ -101,59 +101,62 @@
     letter-spacing: 0.05em;
 }
 
+/* Header Container */
 .header-container {
     display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
     padding: 40px 80px;
-    background-color: #f5e1e1; /* Light pink background inspired by carnations */
-    color: #333; /* Dark text for readability */
+    background-color: #f5e1e1;
+    color: #333;
     position: relative;
-    height: auto;
     align-items: center;
     gap: 20px;
 }
 
+/* Header Content */
 .header-content {
-    flex: 1; /* Takes up half the space */
+    flex: 1 1 50%; /* Flex-grow, flex-shrink, flex-basis */
     padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
 }
 
 .header-content h1 {
-    text-align: center;
     font-size: 3rem;
     margin-bottom: 20px;
-    color: #057c85; /* Dark pink, inspired by carnation petals */
+    color: #057c85;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(214, 51, 108, 0.2);
 }
 
 .header-content p {
-    text-align: center;
     font-size: 1.4rem;
-    color: #555; /* Softer color for readability */
+    color: #555;
     margin-bottom: 30px;
     line-height: 1.6;
 }
 
 .btn-primary {
-    margin-left: 330px;
-    background-color: #057c85; /* Same pink tone for cohesion */
+    background-color: #057c85;
     color: #ffffff;
     padding: 15px 50px;
     text-decoration: none;
-    border-radius: 30px; /* Rounded for a friendly appearance */
+    border-radius: 30px;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add slight shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    align-self: center; /* Center the button */
 }
 
 .btn-primary:hover {
-    background-color: #b8295a; /* Darker shade on hover */
+    background-color: #b8295a;
     transform: scale(1.05);
 }
 
-/* Header Image Section */
+/* Header Image */
 .header-image {
-    flex: 1; /* Takes up half the space */
+    flex: 1 1 50%; /* Flex-grow, flex-shrink, flex-basis */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,9 +164,10 @@
 
 .header-image img {
     width: 90%;
-    border-radius: 20px; /* Rounded corners for a softer look */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Slight shadow for image depth */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
 
 /* Responsive Adjustments */
 /* === 📱 MOBILE VIEW (iPhone 12/13/14, Pixel, Samsung) === */
@@ -247,3 +251,69 @@
     }
 }
 
+/* Responsive Adjustments for Tablets and Small Laptops */
+/* Target devices with screen widths between 675px and 1024px */
+@media (max-width: 1200px) and (min-width: 676px) {
+    .top-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 20px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .logo-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .logo {
+        width: 80px; /* Adjust size as needed */
+        margin-bottom: 5px;
+    }
+
+    .site-title {
+        font-size: 2rem; /* Adjust size as needed */
+    }
+
+    .site-subtitle {
+        font-size: 1.1rem; /* Adjust size as needed */
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .header-content {
+        padding-right: 0;
+        align-items: center;
+    }
+
+    .header-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-content p {
+        font-size: 1.2rem;
+    }
+
+    .btn-primary {
+        align-self: center;
+    }
+
+    .header-image {
+        margin-top: 20px;
+    }
+
+    .header-image img {
+        width: 100%;
+    }
+}
