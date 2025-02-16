@@ -167,7 +167,7 @@
 
 /* Responsive Adjustments */
 /* === 📱 MOBILE VIEW (iPhone 12/13/14, Pixel, Samsung) === */
-@media (max-width: 430px) {
+@media (max-width: 675px) {
     /* Keep only logo and title */
     .contact-info {
         display: none; /* Hide extra details */
