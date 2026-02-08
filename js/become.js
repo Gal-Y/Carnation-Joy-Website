@@ -7,6 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Mobile dropdown support (CSS disables hover open on small screens).
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll("nav .dropdown");
+    dropdowns.forEach((dd) => {
+        const trigger = dd.querySelector("a.dropbtn");
+        if (!trigger) return;
+        trigger.addEventListener("click", (e) => {
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                e.preventDefault();
+                dd.classList.toggle("open");
+            }
+        });
+    });
+});
+
 
 document.getElementById("carer-form").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
@@ -19,8 +34,6 @@ document.getElementById("carer-form").addEventListener("submit", async function 
         availability: document.getElementById("carer-availability").value,
         comments: document.getElementById("carer-message").value.trim(),
     };
-
-    console.log(formData); // ✅ Check if data is being captured correctly
 
     // Basic Validation
     if (!formData.name || !formData.email || !formData.phone || !formData.availability) {

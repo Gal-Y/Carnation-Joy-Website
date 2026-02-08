@@ -75,14 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Optional: Debug logging for generic reveal elements (remove if not needed)
-    genericRevealElements.forEach((el, index) => {
-        console.log(`Generic reveal element ${index + 1} initial position:`, el.getBoundingClientRect().top);
-    });
-    
-    // Optional: Log scroll events for debugging purposes
-    window.addEventListener('scroll', () => {
-        console.log('Scroll event detected. Checking reveal animations.');
-    });
 });
     
     
@@ -95,5 +87,20 @@ document.addEventListener("DOMContentLoaded", () => {
     
     menuToggle.addEventListener("click", () => {
         nav.classList.toggle("nav-open");
+    });
+});
+
+// Mobile dropdown support (CSS disables hover open on small screens).
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll("nav .dropdown");
+    dropdowns.forEach((dd) => {
+        const trigger = dd.querySelector("a.dropbtn");
+        if (!trigger) return;
+        trigger.addEventListener("click", (e) => {
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                e.preventDefault();
+                dd.classList.toggle("open");
+            }
+        });
     });
 });

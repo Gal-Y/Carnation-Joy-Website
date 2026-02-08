@@ -5,28 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = document.querySelector('.carousel-button.next');
     let currentSlide = 0;
 
-    console.log('Carousel script loaded'); // Debugging line
-
     function showSlide(index) {
         carousel.style.transform = `translateX(-${index * 100}%)`;
-        console.log('Showing slide:', index); // Debugging line
     }
 
     prevBtn.addEventListener('click', () => {
-        console.log('Previous button clicked'); // Debugging line
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         showSlide(currentSlide);
     });
 
     nextBtn.addEventListener('click', () => {
-        console.log('Next button clicked'); // Debugging line
         currentSlide = (currentSlide + 1) % slides.length;
         showSlide(currentSlide);
     });
 
     // Initial setup
     showSlide(currentSlide);
-    console.log('Initial slide shown'); // Debugging line
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -51,6 +45,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+// Mobile dropdown support (CSS disables hover open on small screens).
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll("nav .dropdown");
+    dropdowns.forEach((dd) => {
+        const trigger = dd.querySelector("a.dropbtn");
+        if (!trigger) return;
+        trigger.addEventListener("click", (e) => {
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                e.preventDefault();
+                dd.classList.toggle("open");
+            }
+        });
+    });
+});
 
 
 

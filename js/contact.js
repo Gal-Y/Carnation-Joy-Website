@@ -7,6 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Mobile dropdown support (CSS disables hover open on small screens).
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll("nav .dropdown");
+    dropdowns.forEach((dd) => {
+        const trigger = dd.querySelector("a.dropbtn");
+        if (!trigger) return;
+        trigger.addEventListener("click", (e) => {
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                e.preventDefault();
+                dd.classList.toggle("open");
+            }
+        });
+    });
+});
+
 document.getElementById("contactForm").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -67,4 +82,3 @@ document.getElementById("contactForm").addEventListener("submit", async function
         submitButton.innerText = "Submit";
     }
 });
-

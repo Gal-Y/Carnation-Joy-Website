@@ -18,3 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
         nav.classList.toggle("nav-open");
     });
 });
+
+// Mobile dropdown support (CSS disables hover open on small screens).
+document.addEventListener("DOMContentLoaded", function() {
+    const dropdowns = document.querySelectorAll("nav .dropdown");
+    dropdowns.forEach((dd) => {
+        const trigger = dd.querySelector("a.dropbtn");
+        if (!trigger) return;
+        trigger.addEventListener("click", (e) => {
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                e.preventDefault();
+                dd.classList.toggle("open");
+            }
+        });
+    });
+});

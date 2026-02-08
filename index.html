@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carnation Joy - Home</title>
-    <!-- Link to Google Fonts (e.g., Roboto) -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Link to your main stylesheet -->
-    <link rel="stylesheet" href="css/Homepage/general.css">
-    <link rel="stylesheet" href="css/Homepage/header.css">
-    <link rel="stylesheet" href="css/Homepage/nav.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Source+Sans+3:wght@400..800&display=swap" rel="stylesheet">
+    <!-- Shared site styling (v2) -->
+    <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="css/Homepage/services.css">
     <link rel="stylesheet" href="css/Homepage/testimonials.css">
     <link rel="stylesheet" href="css/Homepage/how-it-works.css">
@@ -25,6 +25,7 @@
 <body>
     <header>
         <div class="top-container">
+            <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:18px;">
             <div class="logo-container">
                 <a href="index.html" class="site-title-container">
                     <img src="images/logo.jfif" alt="Carnation Joy Logo" class="logo">
@@ -47,10 +48,11 @@
                     <img src="images/phone.png" alt="Phone Icon"> Call us: 0452683988
                 </a>
             </div>
+            </div>
         </div>
         <div class="nav-container">
 
-            <button class="menu-toggle">☰</button>
+            <button class="menu-toggle">Menu</button>
             
             <nav>
                 <ul>
@@ -141,9 +143,9 @@
         </div>
     </section>
 
-    <section id="testimonials">
-        <h2>What Our Clients Say</h2>
-        <div class="testimonial-section">
+	    <section id="testimonials">
+	        <h2>What Our Clients Say</h2>
+	        <div class="testimonial-section">
             <div class="testimonial-container active" style="background-image: url('images/client1.png');">
                 <div class="testimonial-content">
                     <div class="testimonial-text">
@@ -152,15 +154,16 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonial-container" style="background-image: url('images/client2.jpg');">
-                <div class="testimonial-content">
-                    <div class="testimonial-text">
-                        <h3>Client Name</h3>
-                        <blockquote>"Another testimonial from a different client."</blockquote>
-                    </div>
-                </div>
-            </div>
-    </section>
+	            <div class="testimonial-container" style="background-image: url('images/client2.jpg');">
+	                <div class="testimonial-content">
+	                    <div class="testimonial-text">
+	                        <h3>Client Name</h3>
+	                        <blockquote>"Another testimonial from a different client."</blockquote>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
 
     <!-- How it works section-->
     <section id="how-it-works">
