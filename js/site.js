@@ -1,38 +1,49 @@
-/* Shared behavior: inject header/footer, set active nav, and enable mobile menu. */
+/* Shared behavior: set active nav, enable mobile menu, and enhance forms. */
 (function () {
-  async function inject(id, url) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const res = await fetch(url, { cache: "no-cache" });
-    if (!res.ok) throw new Error(`Failed to load ${url}: ${res.status}`);
-    el.innerHTML = await res.text();
-  }
-
   function setActiveNav() {
     const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
     const map = new Map([
       ["index.html", "home"],
+      ["services.html", "services"],
       ["aged-care.html", "aged"],
       ["disability-support.html", "disability"],
       ["about.html", "about"],
       ["contact.html", "contact"],
-      ["donate.html", "contact"],
-      ["become-a-carer.html", "contact"],
-      ["privacy.html", "contact"],
+      ["donate.html", "donate"],
+      ["become-a-carer.html", "carers"],
+      ["privacy.html", "privacy"],
     ]);
     const key = map.get(path);
     if (!key) return;
-    const link = document.querySelector(`nav a[data-nav="${key}"]`);
+    const link = document.querySelector(`.nav a[data-nav="${key}"]`);
     if (link) link.setAttribute("aria-current", "page");
   }
 
   function wireNavToggle() {
-    const btn = document.querySelector(".navbtn");
-    const nav = document.querySelector("#nav");
+    const btn = document.querySelector(".nav-toggle");
+    const nav = document.getElementById(btn?.getAttribute("aria-controls") || "");
     if (!btn || !nav) return;
-    btn.addEventListener("click", () => {
-      const open = nav.classList.toggle("nav--open");
+    const header = btn.closest(".site-header") || document.body;
+
+    function setOpen(open) {
+      nav.classList.toggle("nav--open", open);
       btn.setAttribute("aria-expanded", String(open));
+    }
+
+    btn.addEventListener("click", () => {
+      setOpen(!nav.classList.contains("nav--open"));
+    });
+
+    // Close when a link is clicked (mobile).
+    nav.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", () => setOpen(false));
+    });
+
+    // Close on outside click.
+    document.addEventListener("click", (e) => {
+      if (!nav.classList.contains("nav--open")) return;
+      if (header.contains(e.target)) return;
+      setOpen(false);
     });
   }
 
@@ -43,7 +54,7 @@
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      out.style.display = "block";
+      out.hidden = false;
       out.className = "alert";
       out.textContent = "Sending...";
 
@@ -75,18 +86,10 @@
     });
   }
 
-  async function main() {
-    try {
-      await inject("site-header", "partials/header.html");
-      await inject("site-footer", "partials/footer.html");
-      setActiveNav();
-      wireNavToggle();
-      wireContactForm();
-    } catch (e) {
-      // If includes fail (e.g., file://), keep the page usable.
-      // eslint-disable-next-line no-console
-      console.warn(e);
-    }
+  function main() {
+    setActiveNav();
+    wireNavToggle();
+    wireContactForm();
   }
 
   if (document.readyState === "loading") {

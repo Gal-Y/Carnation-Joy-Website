@@ -5,57 +5,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Privacy | Carnation Joy Care</title>
     <meta name="description" content="Privacy information for Carnation Joy Care." />
+    <meta name="theme-color" content="#0f6b73" />
+
+    <link rel="icon" href="images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Source+Sans+3:wght@400..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Source+Sans+3:wght@400..900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/site.css" />
-    <link rel="icon" href="images/favicon.ico" />
-    <meta name="theme-color" content="#0f6b73" />
   </head>
-  <body>
-    <div id="site-header"></div>
 
-    <main class="page">
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="utility">
+        <div class="container utility__inner">
+          <div class="badge-row" aria-label="Service focus areas">
+            <span class="badge"><span class="badge__dot" aria-hidden="true"></span>NDIS support</span>
+            <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Aged care</span>
+          </div>
+          <div class="utility__links" aria-label="Quick contact links">
+            <a class="u-link" href="tel:0452683988">0452 683 988</a>
+            <a class="u-link" href="mailto:carnationjoycare@gmail.com">carnationjoycare@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container header__inner">
+        <a class="logo" href="index.html">
+          <img class="logo__mark" src="images/mark.svg" alt="" aria-hidden="true" width="44" height="44" />
+          <span class="logo__text">
+            <span class="logo__name">Carnation Joy Care</span>
+            <span class="logo__tag">Aged & Disability Support</span>
+          </span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          Menu
+        </button>
+
+        <nav id="site-nav" class="nav" aria-label="Primary">
+          <a data-nav="home" href="index.html">Home</a>
+          <a data-nav="services" href="services.html">Services</a>
+          <a data-nav="aged" href="aged-care.html">Aged care</a>
+          <a data-nav="disability" href="disability-support.html">Disability support</a>
+          <a data-nav="about" href="about.html">About</a>
+          <a data-nav="contact" href="contact.html">Contact</a>
+          <a class="nav__cta nav__cta--ghost" data-nav="carers" href="become-a-carer.html">Become a carer</a>
+          <a class="nav__cta" href="contact.html">Find support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="page">
       <div class="container">
-        <section class="page__inner">
-          <p class="kicker">Privacy</p>
+        <section class="page__panel">
+          <p class="eyebrow">Privacy</p>
           <h1>Privacy and enquiries</h1>
-          <p>
-            This is a plain-language privacy summary for website enquiries. Replace this with your final policy if you
-            need a more formal document.
+          <p class="lede">
+            This is a plain-language summary of how we handle website enquiries. Replace this with your final policy if you
+            need a formal document.
           </p>
 
-          <div class="cards" style="margin-top: 14px">
+          <div class="grid grid--2 mt-14">
             <article class="card">
               <h3>What we collect</h3>
               <p>Name and contact details you provide, plus your message.</p>
             </article>
             <article class="card">
               <h3>Why we collect it</h3>
-              <p>To respond to your enquiry and to understand the support you’re looking for.</p>
+              <p>To respond to your enquiry and understand the support you’re looking for.</p>
             </article>
             <article class="card">
               <h3>How we use it</h3>
-              <p>Only for communication about your enquiry, unless you ask for ongoing contact.</p>
+              <p>Only for communication about your enquiry, unless you request ongoing contact.</p>
             </article>
             <article class="card">
               <h3>Contact</h3>
-              <p>Email <a class="link" href="mailto:carnationjoycare@gmail.com">carnationjoycare@gmail.com</a> if you have questions.</p>
+              <p>Email <a class="link" href="mailto:carnationjoycare@gmail.com">carnationjoycare@gmail.com</a> with questions.</p>
             </article>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn btn--primary" href="contact.html">Contact</a>
-            <a class="btn btn--ghost" href="index.html">Home</a>
           </div>
         </section>
       </div>
     </main>
 
-    <div id="site-footer"></div>
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <div class="footer__brand">Carnation Joy Care</div>
+          <div class="muted">Shop 3/10017-10019 Victoria Road, West Ryde NSW 2114</div>
+          <div class="muted"><a class="link" href="tel:0452683988">0452 683 988</a></div>
+          <div class="muted"><a class="link" href="mailto:carnationjoycare@gmail.com">carnationjoycare@gmail.com</a></div>
+          <div class="footer__legal">
+            Information on this site is general in nature and does not replace professional advice. If this is urgent, call 000.
+          </div>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer links">
+          <a data-nav="services" href="services.html">Services</a>
+          <a data-nav="aged" href="aged-care.html">Aged care</a>
+          <a data-nav="disability" href="disability-support.html">Disability support</a>
+          <a data-nav="about" href="about.html">About</a>
+          <a data-nav="carers" href="become-a-carer.html">Become a carer</a>
+          <a data-nav="donate" href="donate.html">Donate</a>
+          <a data-nav="privacy" href="privacy.html">Privacy</a>
+          <a data-nav="contact" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
     <script src="js/site.js"></script>
   </body>
 </html>
