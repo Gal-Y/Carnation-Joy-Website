@@ -16,7 +16,11 @@
     const key = map.get(path);
     if (!key) return;
     const link = document.querySelector(`.nav a[data-nav="${key}"]`);
-    if (link) link.setAttribute("aria-current", "page");
+    if (link) {
+      link.setAttribute("aria-current", "page");
+      const dd = link.closest("details.nav-dd");
+      if (dd) dd.setAttribute("data-current", "true");
+    }
   }
 
   function wireNavToggle() {
@@ -28,6 +32,15 @@
     function setOpen(open) {
       nav.classList.toggle("nav--open", open);
       btn.setAttribute("aria-expanded", String(open));
+      if (!open) {
+        // Close any open dropdowns when the menu collapses.
+        nav.querySelectorAll("details[open]").forEach((d) => {
+          d.open = false;
+          d.removeAttribute("data-current");
+        });
+        // Restore current state if needed.
+        setActiveNav();
+      }
     }
 
     btn.addEventListener("click", () => {
@@ -36,7 +49,10 @@
 
     // Close when a link is clicked (mobile).
     nav.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => setOpen(false));
+      a.addEventListener("click", () => {
+        nav.querySelectorAll("details[open]").forEach((d) => (d.open = false));
+        setOpen(false);
+      });
     });
 
     // Close on outside click.

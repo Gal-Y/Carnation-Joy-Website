@@ -10,10 +10,7 @@
     <link rel="icon" href="images/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Source+Sans+3:wght@400..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/site.css" />
   </head>
 
@@ -48,9 +45,14 @@
 
         <nav id="site-nav" class="nav" aria-label="Primary">
           <a data-nav="home" href="index.html">Home</a>
-          <a data-nav="services" href="services.html">Services</a>
-          <a data-nav="aged" href="aged-care.html">Aged care</a>
-          <a data-nav="disability" href="disability-support.html">Disability support</a>
+          <details class="nav-dd" data-nav-dd>
+            <summary class="nav-dd__summary">Services</summary>
+            <div class="nav-dd__menu" aria-label="Services submenu">
+              <a data-nav="services" href="services.html">Services overview</a>
+              <a data-nav="aged" href="aged-care.html">Aged care</a>
+              <a data-nav="disability" href="disability-support.html">Disability support</a>
+            </div>
+          </details>
           <a data-nav="about" href="about.html">About</a>
           <a data-nav="contact" href="contact.html">Contact</a>
           <a class="nav__cta nav__cta--ghost" data-nav="carers" href="become-a-carer.html">Become a carer</a>
